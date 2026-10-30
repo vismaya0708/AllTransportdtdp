@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "All Transport Service — JNAFAU",
+  "short_name": "All Transport",
+  "description": "JNAFAU student companion for bus, metro and MMTS information.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f6fd",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
