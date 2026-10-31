@@ -1,19 +1,20 @@
 # Contributing
 
-Thanks for helping improve All Transport Service.
+Use Node.js 26+ and `npm ci`. Follow the README to configure a development
+Supabase project; keep credentials in ignored `.env` files.
 
-## Before changing the project
+- Keep React screens usable on narrow mobile displays and with a keyboard.
+- Preserve sample-data disclaimers for all transport modes.
+- Put transport fixtures in `server/data/`; do not invent live provider data.
+- Verify tokens server-side and derive ownership from the verified user.
+- Never trust public signup metadata for roles. Keep RLS and column grants in
+  sync with the API and test through authenticated Supabase REST clients.
+- Add new database migrations rather than modifying an already applied schema.
+- Never put secrets or service-role keys into browser configuration.
 
-- Keep the app usable on narrow mobile screens.
-- Keep `index.html` in the repository root unless deployment configuration is updated.
-- Use relative paths for local assets so GitHub Pages project URLs work.
-- Do not add secrets, passwords, private student information or API keys to the repository.
-- Verify transport data against official sources before presenting it as current.
+Run `npm test` and `npm run build` before submitting. Verify browser navigation,
+email confirmation/recovery, profile updates, bookmarks, and HOD authorization
+against a development Supabase project. See `docs/SUPABASE.md` for RLS checks.
 
-## Testing checklist
-
-- Open the app in a modern mobile and desktop browser.
-- Check navigation and interactive controls.
-- Check the browser console for errors.
-- Test the site on its GitHub Pages URL, not only with a local file.
-- If changing offline assets, update the cache version in `service-worker.js`.
+The PWA worker and cache version are generated from production assets. Check
+offline shell loading and confirm API responses never enter Cache Storage.
